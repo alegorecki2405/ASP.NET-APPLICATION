@@ -33,5 +33,23 @@ namespace WebApplication1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost] // Only for http post
+        public IActionResult Form1(FormModel model) //  Only Form model data
+        {
+            return View(model);
+        }
+
+
+        [HttpPost]
+        public IActionResult DaySinceBirth(BirthDateFormModel birthDateFormModel)
+        {
+            return View(birthDateFormModel);
+        }
+
+        public IActionResult Calculate()
+        {
+            return View();
+        }
     }
 }
